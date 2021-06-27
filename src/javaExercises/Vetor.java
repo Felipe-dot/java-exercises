@@ -36,7 +36,10 @@ public class Vetor {
 			//Falha ao remover
 			return 0;
 		}else {
-			alunos[pos - 1] = null;
+			for(int i = pos - 1; i < cont; i++) {
+				alunos[i] = alunos[i + 1];
+			}
+			alunos[cont] = null;
 			cont--;
 			//A remoção deu certo
 			return 1;
@@ -45,7 +48,7 @@ public class Vetor {
 	
 	public void getLista() {
 		for(int i = 0; i < cont; i++) {
-			System.out.println(alunos[i]);
+			System.out.println(alunos[i].getNome());
 		}
 	}
 } 
